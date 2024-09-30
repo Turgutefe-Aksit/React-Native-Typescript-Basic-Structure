@@ -31,7 +31,7 @@ import {
 function App(): React.JSX.Element {
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex:1}}>
       <LoginScreen></LoginScreen>
       
     </SafeAreaView>
