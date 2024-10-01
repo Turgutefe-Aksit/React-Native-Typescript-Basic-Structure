@@ -1,19 +1,20 @@
-import { StyleSheet, Text, TouchableOpacity, View, ViewStyle } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, ViewStyle,TouchableOpacityProps} from 'react-native'
 import React from 'react'
 import { styles } from './styles'
 
-type Props = {
+
+type Props = TouchableOpacityProps &{
   textName? : string;
   buttonStyle? : ViewStyle;
 };
 
-export default function CustomButton({textName = "Button", buttonStyle}:Props) {
+export default function CustomButton( {textName = "Button", buttonStyle, ...rest}:Props  ) {
   
 
   return (
     
     <View>
-      <TouchableOpacity style = {[styles.container, buttonStyle]}> 
+      <TouchableOpacity style = {[styles.container, buttonStyle]} {...rest}> 
           <Text style={styles.text}>
             {textName}
           </Text>

@@ -1,19 +1,19 @@
-import { Text, TextInput, View,ViewStyle } from 'react-native'
+import { Text, TextInput, TextInputProps, View,ViewStyle } from 'react-native'
 import React from 'react'
 import { styles } from './styles'
 
-type Props = {
+type Props = TextInputProps &{
     placeHolder? : string;
     inputStyle? : ViewStyle;
   };
 
 
-export default function index({placeHolder,inputStyle}:Props) {
+export default function index({placeHolder,inputStyle, ...rest}:Props) {
   return (
 
     <View style={[styles.container,inputStyle]}>
 
-      <TextInput style={styles.input} placeholder={placeHolder}>
+      <TextInput style={styles.input} placeholder={placeHolder} {...rest}>
 
       </TextInput>
 

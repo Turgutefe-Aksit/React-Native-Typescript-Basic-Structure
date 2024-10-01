@@ -25,16 +25,19 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from 'screens/HomeScreen';
+import { RootNavigator } from './src/navigation/navigation';
 
 
 function App(): React.JSX.Element {
 
   return (
-    <SafeAreaView style={{flex:1}}>
-      <LoginScreen></LoginScreen>
-      
-    </SafeAreaView>
+    <NavigationContainer>
+      <RootNavigator></RootNavigator>
+    </NavigationContainer>
+    
   );
 }
 
