@@ -36,7 +36,7 @@ function App(): React.JSX.Element {
   return (
     <NavigationContainer>
       <RootNavigator></RootNavigator>
-    </NavigationContainer>
+    </NavigationContainer> 
     
   );
 }
