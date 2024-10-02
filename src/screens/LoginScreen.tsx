@@ -14,9 +14,13 @@ export default function LoginScreen() {
   const [password, setPassword] = useState("")
 
   useEffect(()=>{
+      
       auth.onAuthStateChanged(user =>{
           if(user){
-              //navigation.navigate("")
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'Onboarding', params: { screen: 'BottomTabs' } }],
+            });
           }
       })
   },[])
@@ -34,10 +38,12 @@ export default function LoginScreen() {
       auth.signInWithEmailAndPassword(mail,password).
       then(userCredentails => {
           const user = userCredentails.user;
-          navigation.navigate("Onboarding", {screen:"HomeScreen"})
+          console.log("Login detected: ",user?.email)
+          navigation.navigate("Onboarding", {screen:"BottomTabs"})
 
       }).
       catch(e=> Alert.alert(e.message))
+
   }
 
   return (
